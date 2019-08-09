@@ -20,29 +20,53 @@
 
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
   .then((heroku)=>{
-    console.log(heroku.data)
+    console.log(heroku)
+    const articles = heroku.data.articles;
+    const Cards = document.querySelector('.cards-container');
+    console.log(articles);
+
+    articles.bootstrap.forEach(card =>{
+      Cards.appendChild(createCards(card.headline, card.authorPhoto, card.authorName));
+    })
+
+    articles.javascript.forEach(card =>{
+      Cards.appendChild(createCards(card.headline, card.authorPhoto, card.authorName));
+    })
+
+    articles.jquery.forEach(card =>{
+      Cards.appendChild(createCards(card.headline, card.authorPhoto, card.authorName));
+    })
+
+    articles.node.forEach(card =>{
+      Cards.appendChild(createCards(card.headline, card.authorPhoto, card.authorName));
+    })
+
+    articles.technology.forEach(card =>{
+      Cards.appendChild(createCards(card.headline, card.authorPhoto, card.authorName));
+    })
   })
   .catch((err)=>{
     console.log(err)
   })
 
-function createCards(){
+function createCards(headline, authorImage, authorName){
   const card = document.createElement('div');
-  const headline = document.createElement('div');
+  const articleHeadline = document.createElement('div');
   const author = document.createElement('div');
   const imgContain = document.createElement('div');
   const authorImg = document.createElement('img');
   const byAuthor = document.createElement('span');
 
   card.classList.add("card");
-  headline.classList.add("headline");
+  articleHeadline.classList.add("headline");
   author.classList.add("author");
   imgContain.classList.add("img-container");
 
-  authorImg.setAttribute('src', author_url);
-  byAuthor.textContent = `By ${name}`;
+  articleHeadline.textContent = headline;
+  authorImg.setAttribute('src', authorImage);
+  byAuthor.textContent = `By ${authorName}`;
 
-  card.appendChild(headline);
+  card.appendChild(articleHeadline);
   card.appendChild(author);
   author.appendChild(imgContain);
   imgContain.appendChild(authorImg);
