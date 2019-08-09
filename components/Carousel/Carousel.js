@@ -41,10 +41,10 @@ function createCarousel (){
   carousel.appendChild(rightButton);
 
   leftButton.textContent = "<";
-  mountainImg.src = ('./assets/carousel/mountains.jpeg');
-  computerImg.src = ('./assets/carousel/computer.jpeg');
-  treeImg.src = ('./assets/carousel/trees.jpeg');
-  turntableImg.src = ('./assets/carousel/turntable.jpeg');
+  mountainImg.src = "./assets/carousel/mountains.jpeg";
+  computerImg.src = "./assets/carousel/computer.jpeg";
+  treeImg.src = "./assets/carousel/trees.jpeg";
+  turntableImg.src = "./assets/carousel/turntable.jpeg";
   rightButton.textContent = ">";
 
   return carousel;
