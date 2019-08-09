@@ -17,6 +17,9 @@
     <div class="right-button"> > </div>
   </div>
 */
+const carousel = document.querySelector('.carousel-container');
+console.log(carousel);
+
 function createCarousel (){
   const carousel = document.createElement('div');
   const leftButton = document.createElement('div');
@@ -46,3 +49,5 @@ function createCarousel (){
 
   return carousel;
 }
+
+carousel.appendChild(createCarousel());
