@@ -23,9 +23,9 @@ function Header() {
  header.appendChild(title);
  header.appendChild(temp);
 
- date.textContent = date;
- title.textContent = title;
- temp.textContent = temp;
+ date.textContent = "AUGUST 9, 2019";
+ title.textContent = "Lambda Times";
+ temp.textContent = "98°";
 
  return header;
 }
