@@ -10,11 +10,11 @@
 
 
   axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
-  .then((heroku) =>{
+  .then((heroku =>{
     console.log(heroku.data)
     const topics = document.querySelector('.topics');
-    topics.appendChild(createTabs(heroku.data))
-  })
+    topics.appendChild(createTabs(heroku))
+  }))
   .catch((err) =>{
     console.log(err)
   })
@@ -29,4 +29,3 @@
 
     return tabs;
   }
-  
